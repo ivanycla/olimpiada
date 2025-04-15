@@ -5,6 +5,7 @@ import Map from "../comp/UI/Map/Map.jsx";
 import FindFriend from "../comp/UI/FindFriend/FindFriend.jsx";
 import FilterButton from "../comp/UI/FilterButton/FilterButton.jsx";
 import Notification from "../comp/UI/Notification/Notifcication.jsx";
+
 const UserPage = () => {
     const [mock, setMock] = useState([
         {
@@ -75,7 +76,7 @@ const UserPage = () => {
                     Профиль
                     </button>
                     <button onClick={handleFindFriend}>
-                        найти друга
+                        Поиск пользователей
                     </button>
                     {flagFindFriend && (
             <div className="find-friend-container">

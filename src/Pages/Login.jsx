@@ -1,6 +1,8 @@
 import React, { useState } from "react";  
 import { Link,useNavigate } from "react-router-dom";  
 import styles from "../styles/Login.module.css";  
+import AlertReg from "../comp/UI/AlertReg/AlertReg.jsx";
+
 
 const Login = () => {  
     const [email, setEmail] = useState("");  
@@ -9,7 +11,7 @@ const Login = () => {
     const navigate = useNavigate();  
     // const [error, setError] = useState("");  
      
-    const [error, setError] = useState("");  
+    const [error, setError] = useState(false);  
 
     const handleSubmit = async (e) => {  
         e.preventDefault(); 
@@ -19,7 +21,7 @@ const Login = () => {
             navigate('/UserPage')
         }
         
-        else alert("Неверны пароль или почта, гадай сам, бож")
+        else setError("true")
         if(email==="zalupa@mail.ru"&&pass==="Zalupa1"){
             navigate("/OrgPage")
         }
@@ -36,6 +38,7 @@ const Login = () => {
 
     return (  
         <div className={styles.container}>  
+        <AlertReg isVisible={error}>Понял</AlertReg>
             <form className={styles.form}>  
                 <p className={styles.title}>Войти</p>  
                 <label className={styles.label}>Почта</label>  

@@ -6,10 +6,6 @@ const FindFriend = () => {
     const [filteredFriends, setFilteredFriends] = useState([]);
     const [addedFriends, setAddedFriends] = useState([]);
     const [mockFriends] = useState([
-        "чмо",
-        "шлюза",
-        "матье бал",
-        "залупенька",
         "лазовский"
     ]);
 
@@ -40,10 +36,10 @@ const FindFriend = () => {
 
     return (
         <div style={{ padding: '20px' }}>
-            <h2>Поиск друзей</h2>
+            <h2>Добавить в друзья</h2>
             <input
                 type="text"
-                placeholder="Введите имя друга..."
+                placeholder="Введите имя пользователя..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./AlertReg.module.css";
 
-const AlertReg = ({ isVisible, onClose }) => {
+const AlertReg = ({ isVisible, onClose = () => {window.location.reload()}, children, onClickButton = () => {window.location.reload()} }) => {
   useEffect(() => {
     if (isVisible) {
       document.body.style.overflow = 'hidden';
@@ -17,6 +17,7 @@ const AlertReg = ({ isVisible, onClose }) => {
 
   if (!isVisible) return null;
 
+
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.alertBox} onClick={(e) => e.stopPropagation()}>
@@ -29,7 +30,7 @@ const AlertReg = ({ isVisible, onClose }) => {
         </button>
         <p className={styles.text}>Зарегайся заебал</p>
         <Link to="/login" className={styles.link}>
-          <button className={styles.button}>Зарегаться</button>
+          <button className={styles.button} onClick={onClickButton}>{children}</button>
         </Link>
       </div>
     </div>
