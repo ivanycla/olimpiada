@@ -11,6 +11,8 @@ import ProfileOrg from './Pages/ProfileOrg';
 import ProfileModer from './Pages/ProfileModer';
 import Moder from './Pages/Moder';
 import ModaraitedProfile from './Pages/ModaraitedProfile';
+import CreateEvent from './Pages/CreateEvent';
+
 function App() {
   return (
     <div className="App">
@@ -47,6 +49,9 @@ function App() {
     </Routes>
     <Routes>
       <Route path='/moderaitProfile/' element={<ModaraitedProfile/>}/>{/* '/Profile/:userId' */}
+    </Routes>
+    <Routes>
+      <Route path='/CreateEvent/' element={<CreateEvent/>}/>{/* '/Profile/:userId' */}
     </Routes>
    
     </BrowserRouter>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../comp/UI/Card/Card";
 import OrgForm from "../comp/UI/OrgForm/OrgFrom";
+import styles from "../styles/ProfileOrg.module.css"
+import { Link } from "react-router-dom";
 
 const ProfileOrg = () => {
     const [mockOrg]=useState({
@@ -37,9 +39,7 @@ const ProfileOrg = () => {
                 tags: ["offline", "ivanzolo", "music"],
                 img: "https://uznayvse.ru/images/content/2022/3/blogger-ivan-zolo_100.jpg"
             }])
-            const handleCreate= () =>{
-                alert("Отправляем на сервер ")
-            }
+            
             useEffect(() => {
                 
                 const searchTerm = search.toLowerCase().trim();
@@ -58,14 +58,61 @@ const ProfileOrg = () => {
                     setFilteredEvents(filtered);
                 }
             }, [search]); 
-    return (
-        <div className="profile-container">
+
+            const defaultProfileName = "Имя не заполнено"
+                const [bio, setBio] = useState(localStorage.getItem("bio") || "");
+                const [info, setInfo] = useState(localStorage.getItem("info") || "");
+                const [name, setName] = useState(localStorage.getItem("name") || defaultProfileName);
+
+            const saveBio = () => {
+                localStorage.setItem("bio", bio);
+            }; 
         
+            const saveName = () => {
+              localStorage.setItem("name", name);
+            }; 
+
+            const saveInfo = () => {
+                localStorage.setItem("info", info);
+            }; 
+          
+
+    return (
+        <div className={styles.profileContainer}>
+            <form className={styles.infoSection}>
+                <h1>Профиль</h1>
+                <label className={styles.label} htmlFor="name">Имя</label>
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Ваше имя ( видно всем )"
+                    name='name'
+                />
+                <label className={styles.label} htmlFor="bio">О себе</label>
+                <input
+                    type="text"
+                    value={bio}
+                    onChange={(e) => setBio(e.target.value)}
+                    placeholder="Расскажите о себе"
+                    name='bio'
+                />
+                <label className={styles.label} htmlFor="info">Информация</label>
+                <input
+                    type="text"
+                    value={info}
+                    onChange={(e) => setInfo(e.target.value)}
+                    placeholder="Расскажите о своей компании"
+                    name='info'
+                />
+                <button type="button" className={styles.button} onClick={() => {saveBio(); saveInfo(); saveName()}}>
+                    Сохранить
+                </button>
+            </form>
             <div>
                 <div>
                     <p>Почта:{mockOrg.email}</p>
                     <p>Организация:{mockOrg.organization}</p>
-                    <p>Информация:{mockOrg.bio}</p>
                 </div>
                 <div>
                 <p>Поиск</p>
@@ -77,8 +124,12 @@ const ProfileOrg = () => {
                         placeholder="Введите название, тег или место"
                     />
                     
-                <p>ваши мероприятия</p>
-                <div>
+                <h1>Ваши мероприятия</h1>
+                <Link to="/CreateEvent" className={styles.loginButton}>
+                    <button className={styles.button}>Создать мероприятие</button>
+                </Link>
+                
+                <div className={styles.listContainer}>
                     {filteredEvents.map((event,index)=>(
                     <div>
                     <Card
@@ -96,11 +147,6 @@ const ProfileOrg = () => {
                     ))}
                 </div>
             </div>
-      </div>
-      <div>
-        <OrgForm
-        onSubmit={handleCreate}
-        />
       </div>
     </div>
   );

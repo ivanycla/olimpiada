@@ -43,6 +43,18 @@ const Guestt = () => {
             info: "заебал",
             tags: ["offline", "fight"],
             img: "https://sun9-73.userapi.com/impf/mk2xRlNqECIqmVBF9q1xbxY0a6xS5ArgBq5DtA/MxTv32K_9sg.jpg?size=1818x606&quality=95&crop=0,191,1500,500&sign=74cfa2b24e8d68f431fafc9f34b1144c&type=cover_group"
+        },
+        {
+            name: "Турнир по экселю",
+            description: `Гладун судья`,
+            format: "Онлайн",
+            place: "БГАС, Минск",
+            coordinates: { lat: 53.930887, lng: 27.651634 },
+            duration: "10 минут",
+            date: "20.04.2025",
+            info: "gladunchik",
+            tags: ["online", "gladun"],
+            img: "https://res.cdn.office.net/apphome/excelogimage.png"
         }
     ]);
     const [isLog,setIslog]=useState(false);
