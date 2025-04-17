@@ -1,11 +1,11 @@
 /* UserReg.module.css */  
 
 :root {  
-    --primary-color: #007BFF;  
+    --primary-color: #d5d5d5;  
     --secondary-color: #0056b3;  
-    --background-color: #f5faff;  
+    --background-color: rgb(57, 57, 57);  
     --error-color: #d9534f;  
-    --text-color: #333;  
+    --text-color: #d5d5d5;  
 }  
 
 .container {  
@@ -13,7 +13,7 @@
     margin: 50px auto;  
     padding: 30px;  
     border-radius: 12px;  
-    background: white;  
+    background: var(--background-color);  
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);  
 }  
 
