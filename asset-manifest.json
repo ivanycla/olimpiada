@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/olimpiada/static/css/main.297bfc31.css",
+    "main.js": "/olimpiada/static/js/main.5e01912d.js",
+    "static/js/453.2b3d965b.chunk.js": "/olimpiada/static/js/453.2b3d965b.chunk.js",
+    "index.html": "/olimpiada/index.html",
+    "main.297bfc31.css.map": "/olimpiada/static/css/main.297bfc31.css.map",
+    "main.5e01912d.js.map": "/olimpiada/static/js/main.5e01912d.js.map",
+    "453.2b3d965b.chunk.js.map": "/olimpiada/static/js/453.2b3d965b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.297bfc31.css",
+    "static/js/main.5e01912d.js"
+  ]
+}
