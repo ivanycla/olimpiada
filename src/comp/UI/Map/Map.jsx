@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 const containerStyle = {
   width: '100%',
   height: '600px',
-  borderRadius: '8px'
+  borderRadius: '8px',
+  boxShadow: "0 12px 24px rgba(0,0,0,0.15)"
 };
 
 const defaultCenter = {

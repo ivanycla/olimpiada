@@ -1,0 +1,83 @@
+.button{
+    background-color: #ffffff;
+    color: rgb(57, 57, 57);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover{
+    background-color: #d5d5d5;
+    color: rgb(57, 57, 57);
+  }
+  
+  .button:active {
+    background-color: #cbc7c7;
+    color: rgb(57, 57, 57);
+  } 
+
+  .profileContainer {
+    color: #d5d5d5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eventList {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .label {
+    color: #d5d5d5;
+    margin: 8px;
+  }
+
+  .mainInfoSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  /* .mainInfoSection > div {
+    margin: 20px;
+  } */
+
+  .infoSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(57, 57, 57);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 30px 100px;
+  }
+
+  .friendsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(57, 57, 57);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 30px 100px;
+    margin-left: 20px;
+  }
+
+  .infoSection input, .infoSection button {
+    max-width: 250px;
+  }

@@ -5,6 +5,8 @@ import Map from "../comp/UI/Map/Map.jsx";
 import FindFriend from "../comp/UI/FindFriend/FindFriend.jsx";
 import FilterButton from "../comp/UI/FilterButton/FilterButton.jsx";
 import Notification from "../comp/UI/Notification/Notifcication.jsx";
+import styles from '../styles/UserPage.module.css'
+
 
 const UserPage = () => {
     const [mock, setMock] = useState([
@@ -72,21 +74,16 @@ const UserPage = () => {
     return (
         <div className="guest-page">
             <header style={{ padding: "20px", display: "flex", justifyContent: "space-between" }}>
-                <button onClick={handleProfileClick}>
+                <button className={styles.button} onClick={handleProfileClick}>
                     Профиль
                     </button>
-                    <button onClick={handleFindFriend}>
+                    <button className={styles.button} onClick={handleFindFriend}>
                         Поиск пользователей
                     </button>
-                    {flagFindFriend && (
-            <div className="find-friend-container">
-                <FindFriend />
-            <button onClick={() => setFlagFindFriend(false)}>Закрыть</button>
-                </div>
-)}         
-            <button
+                    
+            <button className={styles.button}
             onClick={()=>setFlagNotif(true)}
-            >уведомления</button>
+            >Уведомления</button>
             {
                 flagNotif &&(
                     <Notification
@@ -96,14 +93,20 @@ const UserPage = () => {
                 )
             }
             </header>
-            
+            {flagFindFriend && (
+            <div className="find-friend-container">
+                <FindFriend />
+            <button className={styles.button} onClick={() => setFlagFindFriend(false)}>Закрыть</button>
+                </div>
+)}         
             <div style={{ padding: "20px" }}>
                 {/* Карта */}
                 <div style={{ marginBottom: "40px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                     <Map markers={mapMarkers} />
                 </div>
                 
-                <div style={{ marginTop: "30px", padding: "20px", background: "#f8f9fa" }}>
+                <div className={styles.filterList}>
+                    <h1>Фильтры по мероприятиям</h1>
                     <FilterButton onClick={() => {setFilter('all')}} isActive={filter === 'all'}>Все</FilterButton>
                     <FilterButton onClick={() => {setFilter('offline')}} isActive={filter === 'offline'}>Оффлайн</FilterButton>
                     <FilterButton onClick={() => {setFilter('online')}} isActive={filter === 'online'}>Онлайн</FilterButton>

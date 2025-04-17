@@ -1,0 +1,23 @@
+.filterList {
+    margin-top: 20px;
+    padding: 20px;
+    padding-bottom: 40px;
+    background-color: #414141;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.filterList h1 {
+    font-size: 1.7rem;
+    color: #d5d5d5;
+}
+
+.loginButton {
+    text-decoration: none;
+    color: #007bff;
+    transition: 0.3s ease-in-out;
+}
+
+.loginButton:hover {
+    color: #fff;
+}

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CardList from "../comp/UI/CardList/CardList.jsx";
 import Map from "../comp/UI/Map/Map.jsx";
-import './Guestt.css'
 import FilterButton from "../comp/UI/FilterButton/FilterButton.jsx";
+import styles from '../styles/Guestt.module.css'
 
 const Guestt = () => {
 
@@ -63,7 +63,7 @@ const Guestt = () => {
     return (
         <div className="guest-page">
             <header style={{ padding: "20px", display: "flex", justifyContent: "space-between" }}>
-                <Link to="/login" style={{ textDecoration: "none", color: "#007bff" }}>
+                <Link to="/login" className={styles.loginButton}>
                     Войти
                 </Link>
                 
@@ -75,7 +75,8 @@ const Guestt = () => {
                     <Map markers={mapMarkers} />
                 </div>
 
-                <div style={{ marginTop: "30px", padding: "20px", background: "#f8f9fa" }}>
+                <div className={styles.filterList}>
+                    <h1>Фильтры по мероприятиям</h1>
                     <FilterButton onClick={() => {setFilter('all')}} isActive={filter === 'all'}>Все</FilterButton>
                     <FilterButton onClick={() => {setFilter('offline')}} isActive={filter === 'offline'}>Оффлайн</FilterButton>
                     <FilterButton onClick={() => {setFilter('online')}} isActive={filter === 'online'}>Онлайн</FilterButton>

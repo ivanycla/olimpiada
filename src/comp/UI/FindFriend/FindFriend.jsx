@@ -36,37 +36,39 @@ const FindFriend = () => {
 
     return (
         <div style={{ padding: '20px' }}>
-            <h2>Добавить в друзья</h2>
+            <h2 style={{color: '#d5d5d5'}}>Добавить в друзья</h2>
             <input
                 type="text"
                 placeholder="Введите имя пользователя..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
-                    width: '100%',
+                    width: '25rem',
                     padding: '10px',
                     marginBottom: '20px',
                     fontSize: '16px'
                 }}
             />
             
-            <div>
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
                 {searchTerm && (
                     filteredFriends.length === 0 ? (
-                        <p>Ничего не найдено</p>
+                        <p style={{color: '#d5d5d5'}}>Ничего не найдено</p>
                     ) : (
                         filteredFriends.map((friend, index) => (
                             <div 
                                 key={index}
                                 style={{
                                     padding: '10px',
-                                    borderBottom: '1px solid #ccc',
                                     display: 'flex',
                                     justifyContent: 'space-between',
                                     alignItems: 'center'
                                 }}
                             >
-                                <span>{friend}</span>
+                                <span style={{color: '#d5d5d5'}}>{friend}</span>
                                 <button
                                     onClick={() => handleAddFriend(friend)}
                                     disabled={addedFriends.includes(friend)}

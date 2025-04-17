@@ -1,6 +1,6 @@
 
 .card {
-    background: #ffffff;
+    background-color:rgb(57, 57, 57);
     border-radius: 12px;
     padding: 20px;
     margin: 0;
@@ -19,7 +19,7 @@
   .card:hover {
     transform: translateY(-7px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
+    background-color:rgb(52, 52, 52);
   }
   
   .imageContainer {
@@ -52,20 +52,20 @@
   .title {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: #d5d5d5;
     margin: 0;
     transition: color 0.3s ease;
   }
   
   .card:hover .title {
-    color: #e74c3c;
+    color: #ffffff;
     text-shadow: 0 2px 4px rgba(231, 76, 60, 0.1);
   }
   
   .description {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #576574;
+    color: #f4f4f4;
     margin: 0;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -82,7 +82,7 @@
   
   .detailItem {
     font-size: 0.9rem;
-    color: #576574;
+    color: #d5d5d5;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -90,28 +90,34 @@
   
   .detailItem::before {
     content: "•";
-    color: #3498db;
+    color: #d5d5d5;
     font-size: 1.2rem;
     margin-right: 5px;
   }
+
   .participateButton {
-    background-color: #007bff;
-    color: white;
+    margin-top: 15px;
+  }
+
+  .participateButton, .favoriteButton {
+    background-color: #d5d5d5;
+    color: rgb(57, 57, 57);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    margin-top: 15px;
   }
   
-  .participateButton:hover {
-    background-color: #0056b3;
+  .participateButton:hover, .favoriteButton:hover {
+    background-color: #ffffff;
+    color: rgb(57, 57, 57);
   }
   
-  .participateButton:active {
-    background-color: #004085;
+  .participateButton:active, .favoriteButton:active {
+    background-color: #cbc7c7;
+    color: rgb(57, 57, 57);
   } 
   .tagsContainer {
     display: flex;
